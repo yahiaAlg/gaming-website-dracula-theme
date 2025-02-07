@@ -10,9 +10,56 @@
     <title>Game Categories</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="games-categories-style.css" />
+    <link rel="stylesheet" href="./navigation.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
   <body>
-    <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <div class="nav-left">
+            <span class="logo">GamersHub</span>
+            <div class="nav-links">
+              <a href="./home.html" class="nav-link">Home</a>
+              <a href="./blog.html" class="nav-link">Articles</a>
+              <a href="./support.html" class="nav-link">Support</a>
+              <a href="./payment.html" class="nav-link">Payment</a>
+            </div>
+          </div>
+          <div class="nav-right">
+            <button
+              id="themeToggle"
+              class="icon-button"
+              aria-label="Toggle theme"
+            >
+              <i data-lucide="sun"></i>
+            </button>
+            <button class="icon-button" aria-label="Search">
+              <i data-lucide="search"></i>
+            </button>
+            <button
+              id="menuToggle"
+              class="icon-button mobile-only"
+              aria-label="Toggle menu"
+            >
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="mobile-menu">
+        <div class="container">
+          <a href="./home.html" class="nav-link">Home</a>
+          <a href="./blog.html" class="nav-link">Articles</a>
+          <a href="./support.html" class="nav-link">Support</a>
+          <a href="./payment.html" class="nav-link">Payment</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="margin-top: 6rem">
       <header>
         <h1>Game Categories</h1>
         <p>Discover your next gaming adventure</p>
@@ -69,6 +116,53 @@
         <p>No games found matching your criteria</p>
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3 class="logo">GamersHub</h3>
+            <p>
+              Your ultimate destination for gaming news, reviews, and community.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Articles</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="icon-button" aria-label="Twitter">
+                <i data-lucide="twitter"></i>
+              </a>
+              <a href="#" class="icon-button" aria-label="GitHub">
+                <i data-lucide="github"></i>
+              </a>
+              <a href="#" class="icon-button" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit" class="button primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 GamersHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="data.js"></script>
     <script src="app.js"></script>

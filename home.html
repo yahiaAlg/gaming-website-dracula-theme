@@ -13,154 +13,25 @@
     />
     <meta name="author" content="NexusGaming" />
     <title>NexusGaming - Level Up Your Gaming Experience</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes bounceSoft {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      @keyframes glitch {
-        0% {
-          transform: translate(0);
-        }
-        20% {
-          transform: translate(-2px, 2px);
-        }
-        40% {
-          transform: translate(-2px, -2px);
-        }
-        60% {
-          transform: translate(2px, 2px);
-        }
-        80% {
-          transform: translate(2px, -2px);
-        }
-        100% {
-          transform: translate(0);
-        }
-      }
-
-      @keyframes neonGlow {
-        0%,
-        100% {
-          text-shadow: 0 0 10px #bd93f9, 0 0 20px #bd93f9, 0 0 30px #bd93f9;
-        }
-        50% {
-          text-shadow: 0 0 20px #bd93f9, 0 0 30px #bd93f9, 0 0 40px #bd93f9;
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(189, 147, 249, 0.7);
-        }
-        50% {
-          box-shadow: 0 0 0 15px rgba(189, 147, 249, 0);
-        }
-      }
-
-      .animate-fade-in {
-        animation: fadeIn 1s ease-out forwards;
-      }
-
-      .animate-fade-in-delay {
-        animation: fadeIn 1s ease-out 0.3s forwards;
-        opacity: 0;
-      }
-
-      .animate-bounce-subtle {
-        animation: bounceSoft 2s infinite;
-      }
-
-      .animate-glitch:hover {
-        animation: glitch 0.3s linear infinite;
-      }
-
-      .animate-neon {
-        animation: neonGlow 2s ease-in-out infinite;
-      }
-
-      .animate-pulse-glow {
-        animation: pulse 2s infinite;
-      }
-
-      .parallax {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .neon-border {
-        box-shadow: 0 0 10px #bd93f9, inset 0 0 10px #bd93f9;
-      }
-
-      .glass-effect {
-        backdrop-filter: blur(10px);
-        background: rgba(40, 42, 54, 0.8);
-      }
-
-      .scroll-indicator {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 50px;
-        border: 2px solid #bd93f9;
-        border-radius: 15px;
-      }
-
-      .scroll-indicator::before {
-        content: "";
-        position: absolute;
-        top: 8px;
-        left: 50%;
-        width: 6px;
-        height: 6px;
-        background: #bd93f9;
-        border-radius: 50%;
-        transform: translateX(-50%);
-        animation: scrollIndicator 2s infinite;
-      }
-
-      @keyframes scrollIndicator {
-        0% {
-          opacity: 1;
-          transform: translateX(-50%) translateY(0);
-        }
-        100% {
-          opacity: 0;
-          transform: translateX(-50%) translateY(20px);
-        }
-      }
-
-      .counter-value {
-        font-feature-settings: "tnum";
-        font-variant-numeric: tabular-nums;
-      }
-    </style>
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body class="min-h-screen bg-[#282a36] text-gray-100">
     <!-- Header -->
@@ -177,16 +48,20 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex space-x-8">
-            <a href="#home" class="hover:text-[#bd93f9] transition-colors"
+            <a href="./home.html" class="hover:text-[#bd93f9] transition-colors"
               >Home</a
             >
-            <a href="#about" class="hover:text-[#bd93f9] transition-colors"
+            <a
+              href="./home.html#about"
+              class="hover:text-[#bd93f9] transition-colors"
               >About</a
             >
             <a href="#features" class="hover:text-[#bd93f9] transition-colors"
               >Features</a
             >
-            <a href="#gallery" class="hover:text-[#bd93f9] transition-colors"
+            <a
+              href="./games-categories.html"
+              class="hover:text-[#bd93f9] transition-colors"
               >Gallery</a
             >
             <a
@@ -194,19 +69,28 @@
               class="hover:text-[#bd93f9] transition-colors"
               >Testimonials</a
             >
-            <a href="#faq" class="hover:text-[#bd93f9] transition-colors"
+            <a
+              href="./support.html"
+              class="hover:text-[#bd93f9] transition-colors"
               >FAQ</a
             >
-            <a href="#contact" class="hover:text-[#bd93f9] transition-colors"
+            <a
+              href="./home.html#contact"
+              class="hover:text-[#bd93f9] transition-colors"
               >Contact</a
             >
-            <button
+            <a
+              href="./account.html"
               id="themeToggle"
               class="hover:text-[#bd93f9] transition-colors"
             >
-              <i data-lucide="sun" class="w-5 h-5 hidden" id="lightIcon"></i>
-              <i data-lucide="moon" class="w-5 h-5" id="darkIcon"></i>
-            </button>
+              <i
+                data-lucide="circle-user"
+                class="w-5 h-5 hidden"
+                id="lightIcon"
+              ></i>
+              <i data-lucide="circle-user" class="w-5 h-5" id="darkIcon"></i>
+            </a>
           </nav>
 
           <!-- Mobile Menu Button -->
@@ -221,19 +105,29 @@
         class="md:hidden glass-effect border-t border-gray-700 hidden"
         id="mobileMenu"
       >
-        <a href="#home" class="block px-4 py-2 hover:bg-[#44475a]">Home</a>
-        <a href="#about" class="block px-4 py-2 hover:bg-[#44475a]">About</a>
-        <a href="#features" class="block px-4 py-2 hover:bg-[#44475a]"
+        <a href="./home.html" class="block px-4 py-2 hover:bg-[#44475a]"
+          >Home</a
+        >
+        <a href="./home.html#about" class="block px-4 py-2 hover:bg-[#44475a]"
+          >About</a
+        >
+        <a
+          href="./home.html#features"
+          class="block px-4 py-2 hover:bg-[#44475a]"
           >Features</a
         >
-        <a href="#gallery" class="block px-4 py-2 hover:bg-[#44475a]"
+        <a
+          href="./games-categories.html"
+          class="block px-4 py-2 hover:bg-[#44475a]"
           >Gallery</a
         >
         <a href="#testimonials" class="block px-4 py-2 hover:bg-[#44475a]"
           >Testimonials</a
         >
-        <a href="#faq" class="block px-4 py-2 hover:bg-[#44475a]">FAQ</a>
-        <a href="#contact" class="block px-4 py-2 hover:bg-[#44475a]"
+        <a href="./support.html" class="block px-4 py-2 hover:bg-[#44475a]"
+          >FAQ</a
+        >
+        <a href="./home.html#contact" class="block px-4 py-2 hover:bg-[#44475a]"
           >Contact</a
         >
       </nav>
@@ -645,57 +539,93 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#home"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#features"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#gallery"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >Gallery</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >Testimonials</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >FAQ</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+            <div class="row">
+              <div class="col">
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="./home.html#home"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#about"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#features"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Features</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#gallery"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#testimonials"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Testimonials</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#faq"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >FAQ</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./home.html#contact"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="./blog.html"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >blog</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./payment.html"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >payment</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./support.html"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >FAQ</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="games-categories.html"
+                      class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                      >Gallery</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
@@ -767,228 +697,7 @@
       </button>
     </footer>
 
-    <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
-
-      // Mobile menu functionality
-      const menuButton = document.getElementById("menuButton");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const menuIcon = document.getElementById("menuIcon");
-      let isMenuOpen = false;
-
-      menuButton.addEventListener("click", () => {
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle("hidden");
-        menuIcon.setAttribute("data-lucide", isMenuOpen ? "x" : "menu");
-        lucide.createIcons();
-      });
-
-      // Sticky header functionality
-      const header = document.getElementById("header");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          header.classList.add("bg-[#282a36]/95", "shadow-lg");
-        } else {
-          header.classList.remove("bg-[#282a36]/95", "shadow-lg");
-        }
-      });
-
-      // Theme toggle functionality
-      const themeToggle = document.getElementById("themeToggle");
-      const lightIcon = document.getElementById("lightIcon");
-      const darkIcon = document.getElementById("darkIcon");
-      let isDarkMode = true;
-
-      themeToggle.addEventListener("click", () => {
-        isDarkMode = !isDarkMode;
-        document.documentElement.classList.toggle("light-theme");
-        lightIcon.classList.toggle("hidden");
-        darkIcon.classList.toggle("hidden");
-      });
-
-      // Counter animation
-      const counters = document.querySelectorAll(".counter-value");
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = parseInt(counter.getAttribute("data-target"));
-            let current = 0;
-            const increment = target / 100;
-            const updateCounter = () => {
-              if (current < target) {
-                current += increment;
-                counter.textContent = Math.ceil(current).toLocaleString();
-                requestAnimationFrame(updateCounter);
-              } else {
-                counter.textContent = target.toLocaleString();
-              }
-            };
-            updateCounter();
-            counterObserver.unobserve(counter);
-          }
-        });
-      });
-
-      counters.forEach((counter) => counterObserver.observe(counter));
-
-      // FAQ functionality
-      const faqToggles = document.querySelectorAll(".faq-toggle");
-      faqToggles.forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const content = toggle.nextElementSibling;
-          const icon = toggle.querySelector("[data-lucide]");
-          content.classList.toggle("hidden");
-          icon.style.transform = content.classList.contains("hidden")
-            ? "rotate(0deg)"
-            : "rotate(180deg)";
-        });
-      });
-
-      // Back to top button
-      const backToTop = document.getElementById("backToTop");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 500) {
-          backToTop.classList.remove("hidden");
-        } else {
-          backToTop.classList.add("hidden");
-        }
-      });
-
-      backToTop.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-            });
-            // Close mobile menu if open
-            if (isMenuOpen) {
-              isMenuOpen = false;
-              mobileMenu.classList.add("hidden");
-              menuIcon.setAttribute("data-lucide", "menu");
-              lucide.createIcons();
-            }
-          }
-        });
-      });
-
-      // Form validation and submission
-      const contactForm = document.getElementById("contactForm");
-      contactForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        // Basic form validation
-        const formData = new FormData(contactForm);
-        let isValid = true;
-
-        formData.forEach((value, key) => {
-          const input = contactForm.querySelector(`[name="${key}"]`);
-          if (input.hasAttribute("required") && !value) {
-            isValid = false;
-            input.classList.add("border-red-500");
-          } else {
-            input.classList.remove("border-red-500");
-          }
-        });
-
-        if (!isValid) {
-          alert("Please fill in all required fields.");
-          return;
-        }
-
-        // reCAPTCHA validation
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          alert("Please complete the reCAPTCHA verification.");
-          return;
-        }
-
-        // Simulate form submission
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        submitButton.innerHTML =
-          '<i data-lucide="loader" class="w-5 h-5 animate-spin"></i> Sending...';
-        lucide.createIcons();
-
-        try {
-          // Simulate API call
-          await new Promise((resolve) => setTimeout(resolve, 2000));
-          contactForm.reset();
-          alert("Message sent successfully!");
-        } catch (error) {
-          alert("An error occurred. Please try again later.");
-        } finally {
-          submitButton.disabled = false;
-          submitButton.innerHTML = "Send Message";
-          grecaptcha.reset();
-        }
-      });
-
-      // Gallery image loading
-      const loadGalleryImages = async () => {
-        const galleryGrid = document.getElementById("galleryGrid");
-        const gameKeywords = ["gaming", "game", "esports", "videogame"];
-
-        try {
-          // Simulate fetching images from an API
-          const images = [
-            "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1534488972407-5a4aa1e47d83?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-          ];
-
-          images.forEach((imageUrl) => {
-            const div = document.createElement("div");
-            div.className =
-              "relative group overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-all duration-300";
-            div.innerHTML = `
-            <img src="${imageUrl}" alt="Game screenshot" class="w-full h-64 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-[#282a36]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
-            </div>
-          `;
-            galleryGrid.appendChild(div);
-          });
-          lucide.createIcons();
-        } catch (error) {
-          console.error("Error loading gallery images:", error);
-        }
-      };
-
-      loadGalleryImages();
-
-      // Initialize Google Maps
-      function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -34.397, lng: 150.644 },
-          zoom: 8,
-          styles: [
-            // Dark theme map styles
-            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-            {
-              elementType: "labels.text.stroke",
-              stylers: [{ color: "#242f3e" }],
-            },
-            {
-              elementType: "labels.text.fill",
-              stylers: [{ color: "#746855" }],
-            },
-            // Add more custom styles as needed
-          ],
-        });
-      }
-    </script>
+    <script src="home.js"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"
       async

@@ -92,7 +92,9 @@ function renderGameCard(game) {
 
   return `
     <div class="${cardClass}">
-      <img src="${game.imageUrl}" alt="${game.title}">
+        <a href="./game.html">
+        <img src="${game.imageUrl}" alt="${game.title}">
+        </a>
       <div class="game-content">
         <h3 class="game-title">${game.title}</h3>
         <p class="game-description">${game.description}</p>
