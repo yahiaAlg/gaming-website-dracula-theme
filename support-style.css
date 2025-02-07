@@ -13,7 +13,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.active {
+  color: var(--accent) !important;
+}
 html {
   scroll-behavior: smooth;
 }
