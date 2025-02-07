@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Level up your gaming experience with NexusGaming - the ultimate gaming community"
+    />
+    <meta
+      name="keywords"
+      content="gaming, esports, tournaments, gaming community"
+    />
+    <meta name="author" content="NexusGaming" />
+    <title>NexusGaming - Level Up Your Gaming Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounceSoft {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      @keyframes neonGlow {
+        0%,
+        100% {
+          text-shadow: 0 0 10px #bd93f9, 0 0 20px #bd93f9, 0 0 30px #bd93f9;
+        }
+        50% {
+          text-shadow: 0 0 20px #bd93f9, 0 0 30px #bd93f9, 0 0 40px #bd93f9;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(189, 147, 249, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 0 15px rgba(189, 147, 249, 0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      .animate-fade-in-delay {
+        animation: fadeIn 1s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+
+      .animate-bounce-subtle {
+        animation: bounceSoft 2s infinite;
+      }
+
+      .animate-glitch:hover {
+        animation: glitch 0.3s linear infinite;
+      }
+
+      .animate-neon {
+        animation: neonGlow 2s ease-in-out infinite;
+      }
+
+      .animate-pulse-glow {
+        animation: pulse 2s infinite;
+      }
+
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .neon-border {
+        box-shadow: 0 0 10px #bd93f9, inset 0 0 10px #bd93f9;
+      }
+
+      .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(40, 42, 54, 0.8);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 50px;
+        border: 2px solid #bd93f9;
+        border-radius: 15px;
+      }
+
+      .scroll-indicator::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        background: #bd93f9;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        animation: scrollIndicator 2s infinite;
+      }
+
+      @keyframes scrollIndicator {
+        0% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(20px);
+        }
+      }
+
+      .counter-value {
+        font-feature-settings: "tnum";
+        font-variant-numeric: tabular-nums;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#282a36] text-gray-100">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center space-x-2">
+            <i
+              data-lucide="gamepad-2"
+              class="w-8 h-8 text-[#bd93f9] animate-neon"
+            ></i>
+            <span class="text-xl font-bold animate-glitch">NexusGaming</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-8">
+            <a href="#home" class="hover:text-[#bd93f9] transition-colors"
+              >Home</a
+            >
+            <a href="#about" class="hover:text-[#bd93f9] transition-colors"
+              >About</a
+            >
+            <a href="#features" class="hover:text-[#bd93f9] transition-colors"
+              >Features</a
+            >
+            <a href="#gallery" class="hover:text-[#bd93f9] transition-colors"
+              >Gallery</a
+            >
+            <a
+              href="#testimonials"
+              class="hover:text-[#bd93f9] transition-colors"
+              >Testimonials</a
+            >
+            <a href="#faq" class="hover:text-[#bd93f9] transition-colors"
+              >FAQ</a
+            >
+            <a href="#contact" class="hover:text-[#bd93f9] transition-colors"
+              >Contact</a
+            >
+            <button
+              id="themeToggle"
+              class="hover:text-[#bd93f9] transition-colors"
+            >
+              <i data-lucide="sun" class="w-5 h-5 hidden" id="lightIcon"></i>
+              <i data-lucide="moon" class="w-5 h-5" id="darkIcon"></i>
+            </button>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden" id="menuButton" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        class="md:hidden glass-effect border-t border-gray-700 hidden"
+        id="mobileMenu"
+      >
+        <a href="#home" class="block px-4 py-2 hover:bg-[#44475a]">Home</a>
+        <a href="#about" class="block px-4 py-2 hover:bg-[#44475a]">About</a>
+        <a href="#features" class="block px-4 py-2 hover:bg-[#44475a]"
+          >Features</a
+        >
+        <a href="#gallery" class="block px-4 py-2 hover:bg-[#44475a]"
+          >Gallery</a
+        >
+        <a href="#testimonials" class="block px-4 py-2 hover:bg-[#44475a]"
+          >Testimonials</a
+        >
+        <a href="#faq" class="block px-4 py-2 hover:bg-[#44475a]">FAQ</a>
+        <a href="#contact" class="block px-4 py-2 hover:bg-[#44475a]"
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center parallax"
+      style="
+        background-image: linear-gradient(
+            rgba(40, 42, 54, 0.8),
+            rgba(40, 42, 54, 0.8)
+          ),
+          url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      "
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1
+          class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in animate-neon"
+        >
+          Level Up Your Gaming Experience
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-gray-300 animate-fade-in-delay">
+          Join the ultimate gaming community
+        </p>
+        <button
+          class="bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 animate-pulse-glow"
+        >
+          Get Started
+        </button>
+      </div>
+      <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          Our Journey
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-lg text-gray-300">
+              Founded in 2020, NexusGaming has been at the forefront of
+              revolutionizing the gaming industry. Our mission is to create an
+              inclusive, competitive, and engaging platform for gamers
+              worldwide.
+            </p>
+            <div class="grid grid-cols-2 gap-8">
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-[#bd93f9] mb-2 counter-value"
+                  data-target="1000000"
+                >
+                  0
+                </div>
+                <p class="text-gray-400">Global Players</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-[#bd93f9] mb-2 counter-value"
+                  data-target="500"
+                >
+                  0
+                </div>
+                <p class="text-gray-400">Tournaments Hosted</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <lottie-player
+              src="https://assets2.lottiefiles.com/packages/lf20_xyadoh9h.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 400px"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-[#44475a]">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          Why Choose Us
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-[#282a36] p-6 rounded-lg hover:transform hover:scale-105 transition-all neon-border"
+          >
+            <div class="text-[#bd93f9] mb-4">
+              <i data-lucide="gamepad-2" class="w-8 h-8 animate-neon"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Premium Gaming</h3>
+            <p class="text-gray-400">
+              Access to exclusive game titles and early releases
+            </p>
+          </div>
+          <div
+            class="bg-[#282a36] p-6 rounded-lg hover:transform hover:scale-105 transition-all neon-border"
+          >
+            <div class="text-[#bd93f9] mb-4">
+              <i data-lucide="trophy" class="w-8 h-8 animate-neon"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Tournaments</h3>
+            <p class="text-gray-400">
+              Weekly competitions with cash prizes and rewards
+            </p>
+          </div>
+          <div
+            class="bg-[#282a36] p-6 rounded-lg hover:transform hover:scale-105 transition-all neon-border"
+          >
+            <div class="text-[#bd93f9] mb-4">
+              <i data-lucide="users" class="w-8 h-8 animate-neon"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Community</h3>
+            <p class="text-gray-400">Join our growing global gaming family</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          Game Gallery
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8" id="galleryGrid">
+          <!-- Gallery items will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-[#44475a]">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          What Gamers Say
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-[#282a36] p-6 rounded-lg transform hover:scale-105 transition-duration-300 neon-border"
+          >
+            <p class="mb-4 text-gray-300">
+              "The best gaming platform I've ever used! The community is amazing
+              and the tournaments are incredibly well organized."
+            </p>
+            <div class="flex items-center">
+              <div>
+                <h4 class="font-semibold">Alex Smith</h4>
+                <p class="text-sm text-[#bd93f9]">Pro Gamer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#282a36] p-6 rounded-lg transform hover:scale-105 transition-duration-300 neon-border"
+          >
+            <p class="mb-4 text-gray-300">
+              "Amazing community and support. The streaming features are
+              top-notch and the prize pools are incredible!"
+            </p>
+            <div class="flex items-center">
+              <div>
+                <h4 class="font-semibold">Sarah Johnson</h4>
+                <p class="text-sm text-[#bd93f9]">Streamer</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#282a36] p-6 rounded-lg transform hover:scale-105 transition-duration-300 neon-border"
+          >
+            <p class="mb-4 text-gray-300">
+              "Outstanding platform for both gamers and developers. The API
+              integration makes it easy to build amazing gaming experiences."
+            </p>
+            <div class="flex items-center">
+              <div>
+                <h4 class="font-semibold">Mike Brown</h4>
+                <p class="text-sm text-[#bd93f9]">Game Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="bg-[#44475a] rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center faq-toggle"
+            >
+              <span>How do I join tournaments?</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 transform transition-transform"
+              ></i>
+            </button>
+            <div class="px-6 py-4 bg-[#282a36] hidden faq-content">
+              <p class="text-gray-300">
+                Simply register an account, navigate to the tournaments section,
+                and click "Join" on any available tournament. Make sure to read
+                the rules and requirements before participating.
+              </p>
+            </div>
+          </div>
+          <div class="bg-[#44475a] rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center faq-toggle"
+            >
+              <span>What games are supported?</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 transform transition-transform"
+              ></i>
+            </button>
+            <div class="px-6 py-4 bg-[#282a36] hidden faq-content">
+              <p class="text-gray-300">
+                We support a wide range of popular games including League of
+                Legends, DOTA 2, CS:GO, Valorant, and many more. Check our games
+                section for the full list.
+              </p>
+            </div>
+          </div>
+          <div class="bg-[#44475a] rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center faq-toggle"
+            >
+              <span>How do payouts work?</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-5 h-5 transform transition-transform"
+              ></i>
+            </button>
+            <div class="px-6 py-4 bg-[#282a36] hidden faq-content">
+              <p class="text-gray-300">
+                Tournament winnings are paid out within 48 hours of tournament
+                completion. We support multiple payment methods including
+                PayPal, bank transfer, and crypto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#44475a]">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 animate-neon"
+        >
+          Get In Touch
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-[#282a36] p-8 rounded-lg neon-border">
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  class="w-full px-4 py-3 rounded-lg bg-[#44475a] border border-gray-700 focus:border-[#bd93f9] focus:ring-2 focus:ring-[#bd93f9] focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Your Email"
+                  class="w-full px-4 py-3 rounded-lg bg-[#44475a] border border-gray-700 focus:border-[#bd93f9] focus:ring-2 focus:ring-[#bd93f9] focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Subject</label
+                >
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 rounded-lg bg-[#44475a] border border-gray-700 focus:border-[#bd93f9] focus:ring-2 focus:ring-[#bd93f9] focus:outline-none transition-colors"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="tournament">Tournament Support</option>
+                  <option value="business">Business Partnership</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Your Message"
+                  rows="4"
+                  class="w-full px-4 py-3 rounded-lg bg-[#44475a] border border-gray-700 focus:border-[#bd93f9] focus:ring-2 focus:ring-[#bd93f9] focus:outline-none transition-colors"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="attachment"
+                  class="block text-sm font-medium text-gray-300 mb-1"
+                  >Attachment (optional)</label
+                >
+                <input
+                  type="file"
+                  id="attachment"
+                  name="attachment"
+                  accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                  class="w-full px-4 py-3 rounded-lg bg-[#44475a] border border-gray-700 focus:border-[#bd93f9] focus:ring-2 focus:ring-[#bd93f9] focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#bd93f9] file:text-white hover:file:bg-[#bd93f9]/80"
+                />
+              </div>
+              <div
+                class="g-recaptcha"
+                data-sitekey="your-recaptcha-site-key"
+              ></div>
+              <button
+                type="submit"
+                class="w-full bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 animate-pulse-glow"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="space-y-8">
+            <div class="bg-[#282a36] p-6 rounded-lg neon-border">
+              <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-[#bd93f9]"></i>
+                  <span>123 Gaming Street, E-Sports City, GC 12345</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i data-lucide="phone" class="w-5 h-5 text-[#bd93f9]"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <i data-lucide="mail" class="w-5 h-5 text-[#bd93f9]"></i>
+                  <span>contact@nexusgaming.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#282a36] p-6 rounded-lg h-64 neon-border">
+              <div id="map" class="w-full h-full rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#282a36] py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <i
+                data-lucide="gamepad-2"
+                class="w-6 h-6 text-[#bd93f9] animate-neon"
+              ></i>
+              <span class="text-lg font-bold animate-glitch">NexusGaming</span>
+            </div>
+            <p class="text-gray-400">
+              Level up your gaming experience with us.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+              >
+                <i data-lucide="twitter" class="w-6 h-6"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+              >
+                <i data-lucide="github" class="w-6 h-6"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+              >
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+              >
+                <i data-lucide="twitch" class="w-6 h-6"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-[#bd93f9] transition-colors"
+              >
+                <i data-lucide="youtube" class="w-6 h-6"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+            <form class="space-y-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="flex-1 px-4 py-2 rounded-l-lg bg-[#44475a] border border-gray-700 focus:outline-none"
+                />
+                <button
+                  class="bg-[#bd93f9] px-4 rounded-r-lg hover:bg-[#bd93f9]/80 transition-colors"
+                >
+                  <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+              </div>
+              <p class="text-sm text-gray-400">
+                Subscribe to our newsletter for updates and exclusive offers!
+              </p>
+            </form>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400"
+        >
+          <p>&copy; 2024 NexusGaming. All rights reserved.</p>
+        </div>
+      </div>
+      <button
+        id="backToTop"
+        class="fixed bottom-8 right-8 bg-[#bd93f9] p-3 rounded-full shadow-lg hidden hover:bg-[#bd93f9]/80 transition-colors animate-bounce-subtle"
+      >
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+      </button>
+    </footer>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Mobile menu functionality
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuIcon = document.getElementById("menuIcon");
+      let isMenuOpen = false;
+
+      menuButton.addEventListener("click", () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle("hidden");
+        menuIcon.setAttribute("data-lucide", isMenuOpen ? "x" : "menu");
+        lucide.createIcons();
+      });
+
+      // Sticky header functionality
+      const header = document.getElementById("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("bg-[#282a36]/95", "shadow-lg");
+        } else {
+          header.classList.remove("bg-[#282a36]/95", "shadow-lg");
+        }
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const lightIcon = document.getElementById("lightIcon");
+      const darkIcon = document.getElementById("darkIcon");
+      let isDarkMode = true;
+
+      themeToggle.addEventListener("click", () => {
+        isDarkMode = !isDarkMode;
+        document.documentElement.classList.toggle("light-theme");
+        lightIcon.classList.toggle("hidden");
+        darkIcon.classList.toggle("hidden");
+      });
+
+      // Counter animation
+      const counters = document.querySelectorAll(".counter-value");
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute("data-target"));
+            let current = 0;
+            const increment = target / 100;
+            const updateCounter = () => {
+              if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current).toLocaleString();
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target.toLocaleString();
+              }
+            };
+            updateCounter();
+            counterObserver.unobserve(counter);
+          }
+        });
+      });
+
+      counters.forEach((counter) => counterObserver.observe(counter));
+
+      // FAQ functionality
+      const faqToggles = document.querySelectorAll(".faq-toggle");
+      faqToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector("[data-lucide]");
+          content.classList.toggle("hidden");
+          icon.style.transform = content.classList.contains("hidden")
+            ? "rotate(0deg)"
+            : "rotate(180deg)";
+        });
+      });
+
+      // Back to top button
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove("hidden");
+        } else {
+          backToTop.classList.add("hidden");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+            // Close mobile menu if open
+            if (isMenuOpen) {
+              isMenuOpen = false;
+              mobileMenu.classList.add("hidden");
+              menuIcon.setAttribute("data-lucide", "menu");
+              lucide.createIcons();
+            }
+          }
+        });
+      });
+
+      // Form validation and submission
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Basic form validation
+        const formData = new FormData(contactForm);
+        let isValid = true;
+
+        formData.forEach((value, key) => {
+          const input = contactForm.querySelector(`[name="${key}"]`);
+          if (input.hasAttribute("required") && !value) {
+            isValid = false;
+            input.classList.add("border-red-500");
+          } else {
+            input.classList.remove("border-red-500");
+          }
+        });
+
+        if (!isValid) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // reCAPTCHA validation
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          alert("Please complete the reCAPTCHA verification.");
+          return;
+        }
+
+        // Simulate form submission
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.innerHTML =
+          '<i data-lucide="loader" class="w-5 h-5 animate-spin"></i> Sending...';
+        lucide.createIcons();
+
+        try {
+          // Simulate API call
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          contactForm.reset();
+          alert("Message sent successfully!");
+        } catch (error) {
+          alert("An error occurred. Please try again later.");
+        } finally {
+          submitButton.disabled = false;
+          submitButton.innerHTML = "Send Message";
+          grecaptcha.reset();
+        }
+      });
+
+      // Gallery image loading
+      const loadGalleryImages = async () => {
+        const galleryGrid = document.getElementById("galleryGrid");
+        const gameKeywords = ["gaming", "game", "esports", "videogame"];
+
+        try {
+          // Simulate fetching images from an API
+          const images = [
+            "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1534488972407-5a4aa1e47d83?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+          ];
+
+          images.forEach((imageUrl) => {
+            const div = document.createElement("div");
+            div.className =
+              "relative group overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-all duration-300";
+            div.innerHTML = `
+            <img src="${imageUrl}" alt="Game screenshot" class="w-full h-64 object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-[#282a36]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+            </div>
+          `;
+            galleryGrid.appendChild(div);
+          });
+          lucide.createIcons();
+        } catch (error) {
+          console.error("Error loading gallery images:", error);
+        }
+      };
+
+      loadGalleryImages();
+
+      // Initialize Google Maps
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+          styles: [
+            // Dark theme map styles
+            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+            {
+              elementType: "labels.text.stroke",
+              stylers: [{ color: "#242f3e" }],
+            },
+            {
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#746855" }],
+            },
+            // Add more custom styles as needed
+          ],
+        });
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment & Subscription</title>
+    <link rel="stylesheet" href="payment.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="header-title">Payment & Subscription</h1>
+        </div>
+        <nav class="header-nav">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#" class="nav-link active">Pricing</a>
+          <a href="#" class="nav-link">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="subscription-plans active" id="plans-section">
+        <div class="plans-grid">
+          <!-- Basic Plan -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h2 class="plan-title">Basic</h2>
+              <div class="plan-price">
+                <span class="amount">$9.99</span>
+                <span class="period">/month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Access to basic games</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>720p streaming quality</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Standard support</span>
+              </li>
+            </ul>
+            <button class="plan-button" data-plan="basic" data-price="9.99">
+              Select Plan
+            </button>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="plan-card featured">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-header">
+              <h2 class="plan-title">Pro</h2>
+              <div class="plan-price">
+                <span class="amount">$19.99</span>
+                <span class="period">/month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Access to all games</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>1080p streaming quality</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Priority support</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Exclusive in-game items</span>
+              </li>
+            </ul>
+            <button class="plan-button" data-plan="pro" data-price="19.99">
+              Select Plan
+            </button>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h2 class="plan-title">Premium</h2>
+              <div class="plan-price">
+                <span class="amount">$29.99</span>
+                <span class="period">/month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Access to all games</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>4K streaming quality</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>24/7 premium support</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Exclusive in-game items</span>
+              </li>
+              <li>
+                <i data-lucide="check" class="feature-icon"></i>
+                <span>Early access to new games</span>
+              </li>
+            </ul>
+            <button class="plan-button" data-plan="premium" data-price="29.99">
+              Select Plan
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-section" id="payment-section">
+        <div class="payment-header">
+          <button class="back-button">
+            <i data-lucide="arrow-left"></i>
+            <span>Back to Plans</span>
+          </button>
+          <div class="selected-plan">
+            <h2>Complete Your Purchase</h2>
+            <div class="plan-summary">
+              <span class="plan-name">Pro Plan</span>
+              <span class="plan-price">$19.99/month</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="payment-form">
+          <div class="form-section">
+            <h3>Payment Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cardName">
+                  <i data-lucide="user"></i>
+                  Cardholder Name
+                </label>
+                <input type="text" id="cardName" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cardNumber">
+                  <i data-lucide="credit-card"></i>
+                  Card Number
+                </label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  required
+                  pattern="[0-9]{16}"
+                  maxlength="16"
+                />
+              </div>
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="expiry">
+                  <i data-lucide="calendar"></i>
+                  Expiry Date
+                </label>
+                <input
+                  type="text"
+                  id="expiry"
+                  required
+                  pattern="[0-9]{2}/[0-9]{2}"
+                  placeholder="MM/YY"
+                  maxlength="5"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cvv">
+                  <i data-lucide="shield"></i>
+                  CVV
+                </label>
+                <input
+                  type="text"
+                  id="cvv"
+                  required
+                  pattern="[0-9]{3,4}"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Billing Address</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="street">
+                  <i data-lucide="map-pin"></i>
+                  Street Address
+                </label>
+                <input type="text" id="street" required />
+              </div>
+            </div>
+
+            <div class="form-row three-cols">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required />
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" required />
+              </div>
+              <div class="form-group">
+                <label for="zip">ZIP Code</label>
+                <input
+                  type="text"
+                  id="zip"
+                  required
+                  pattern="[0-9]{5}"
+                  maxlength="5"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <div class="security-info">
+              <i data-lucide="lock"></i>
+              <span>Your payment is secure. SSL encrypted.</span>
+            </div>
+            <button type="submit" class="submit-button">
+              <span class="button-content">
+                <i data-lucide="check-circle"></i>
+                <span>Complete Purchase</span>
+              </span>
+              <div class="button-loader"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i data-lucide="youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Gaming Platform. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+      <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="payment.js"></script>
+  </body>
+</html>

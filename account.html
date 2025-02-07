@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="./account-style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <h1 class="header-title">Account Settings</h1>
+        <button class="logout-button">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <i data-lucide="settings"></i>
+          <h2>Settings</h2>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-section="profile">
+            <i data-lucide="user"></i>
+            <span>Profile</span>
+          </button>
+          <button class="nav-item" data-section="security">
+            <i data-lucide="shield"></i>
+            <span>Security</span>
+          </button>
+          <button class="nav-item" data-section="notifications">
+            <i data-lucide="bell"></i>
+            <span>Notifications</span>
+          </button>
+          <button class="nav-item" data-section="privacy">
+            <i data-lucide="lock"></i>
+            <span>Privacy</span>
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <div class="section active" id="profile-section">
+          <form class="profile-form">
+            <div class="avatar-upload">
+              <img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop"
+                alt="Profile"
+                class="avatar"
+              />
+              <button type="button" class="avatar-upload-button">
+                <i data-lucide="camera"></i>
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" value="GamerPro123" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" value="gamer@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea id="bio" rows="4">
+Passionate gamer and streamer. Love exploring new worlds and making new friends!</textarea
+              >
+            </div>
+
+            <button type="submit" class="submit-button">Save Changes</button>
+          </form>
+        </div>
+
+        <div class="section" id="security-section">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <i data-lucide="shield"></i>
+                <h3>Two-Factor Authentication</h3>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="two-factor" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="card-description">
+              Add an extra layer of security to your account by enabling
+              two-factor authentication.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <i data-lucide="clock"></i>
+                <h3>Recent Login Activity</h3>
+              </div>
+            </div>
+            <div class="login-history">
+              <div class="login-item">
+                <div>
+                  <p class="device">Windows PC - Chrome</p>
+                  <p class="location">San Francisco, US</p>
+                </div>
+                <div class="login-details">
+                  <p class="date">2024-03-10 14:30</p>
+                  <span class="status success">success</span>
+                </div>
+              </div>
+              <div class="login-item">
+                <div>
+                  <p class="device">iPhone 13 - Safari</p>
+                  <p class="location">San Francisco, US</p>
+                </div>
+                <div class="login-details">
+                  <p class="date">2024-03-09 18:45</p>
+                  <span class="status success">success</span>
+                </div>
+              </div>
+              <div class="login-item">
+                <div>
+                  <p class="device">Unknown Device</p>
+                  <p class="location">Beijing, CN</p>
+                </div>
+                <div class="login-details">
+                  <p class="date">2024-03-08 22:15</p>
+                  <span class="status failed">failed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="notifications-section">
+          <div class="notification-list">
+            <div class="notification-item">
+              <div>
+                <h3>Email Alerts</h3>
+                <p>Receive important updates and alerts via email</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="notification-item">
+              <div>
+                <h3>Push Notifications</h3>
+                <p>Get instant notifications on your device</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="notification-item">
+              <div>
+                <h3>Game Updates</h3>
+                <p>Stay informed about game patches and updates</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="notification-item">
+              <div>
+                <h3>Friend Requests</h3>
+                <p>Get notified when someone sends you a friend request</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" checked />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="notification-item">
+              <div>
+                <h3>Marketing Emails</h3>
+                <p>Receive news about promotions and special offers</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="privacy-section">
+          <div class="card">
+            <h3>Profile Visibility</h3>
+            <div class="visibility-options">
+              <button class="visibility-option" data-visibility="public">
+                <i data-lucide="globe"></i>
+                <span>Public</span>
+              </button>
+              <button class="visibility-option" data-visibility="private">
+                <i data-lucide="eye"></i>
+                <span>Private</span>
+              </button>
+              <button
+                class="visibility-option active"
+                data-visibility="friends"
+              >
+                <i data-lucide="users"></i>
+                <span>Friends</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Privacy Options</h3>
+            <div class="privacy-options">
+              <div class="privacy-item">
+                <div class="privacy-info">
+                  <i data-lucide="eye"></i>
+                  <div>
+                    <h4>Show Online Status</h4>
+                    <p>Let others see when you're online</p>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="privacy-item">
+                <div class="privacy-info">
+                  <i data-lucide="clock"></i>
+                  <div>
+                    <h4>Show Playtime</h4>
+                    <p>Display your game playtime on your profile</p>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="privacy-item">
+                <div class="privacy-info">
+                  <i data-lucide="user-plus"></i>
+                  <div>
+                    <h4>Allow Friend Requests</h4>
+                    <p>Receive friend requests from other players</p>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Connected Accounts</h3>
+            <div class="connected-accounts">
+              <div class="account-item">
+                <div>
+                  <h4>Steam</h4>
+                  <p>Connected as GamerPro123</p>
+                </div>
+                <button class="disconnect-button">Disconnect</button>
+              </div>
+
+              <div class="account-item">
+                <div>
+                  <h4>Discord</h4>
+                  <p>Connected as GamerPro123#1234</p>
+                </div>
+                <button class="disconnect-button">Disconnect</button>
+              </div>
+
+              <div class="account-item">
+                <div>
+                  <h4>Twitch</h4>
+                </div>
+                <button class="connect-button">Connect</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./account-script.js"></script>
+  </body>
+</html>
